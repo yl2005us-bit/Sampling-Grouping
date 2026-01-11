@@ -1,0 +1,5 @@
+{
+  "name": "LuckyGroup",
+  "description": "現代化的隨機抽籤與自動分組工具，支援 CSV 上傳與手動輸入。",
+  "requestFramePermissions": []
+}
