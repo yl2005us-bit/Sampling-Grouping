@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Play, RotateCcw, Award, Settings, CheckCircle2 } from 'lucide-react';
 import { NameItem } from '../types';
-import { shuffleArray } from '../utils/helpers';
 
 interface LotteryModeProps {
   names: NameItem[];
@@ -21,7 +20,7 @@ const LotteryMode: React.FC<LotteryModeProps> = ({ names }) => {
 
   const startDraw = useCallback(() => {
     if (availableCandidates.length === 0) return;
-    
+
     setIsAnimating(true);
     setWinner(null);
 
@@ -65,7 +64,7 @@ const LotteryMode: React.FC<LotteryModeProps> = ({ names }) => {
             <h2 className="text-sm font-bold text-indigo-500 uppercase tracking-widest mb-4">
               {isAnimating ? '抽籤中...' : winner ? '中獎者!' : '幸運抽籤'}
             </h2>
-            
+
             <div className={`text-5xl md:text-7xl font-bold mb-8 transition-all duration-300 ${isAnimating ? 'scale-105 text-slate-400 blur-[1px]' : 'scale-100 text-slate-800'}`}>
               {currentDisplay}
             </div>
@@ -80,12 +79,12 @@ const LotteryMode: React.FC<LotteryModeProps> = ({ names }) => {
                 {isAnimating ? '抽出幸運兒...' : '開始抽籤'}
               </button>
             </div>
-            
+
             {!allowRepeats && availableCandidates.length === 0 && names.length > 0 && (
-               <p className="mt-4 text-amber-600 font-medium">所有人選都已被抽出！</p>
+              <p className="mt-4 text-amber-600 font-medium">所有人選都已被抽出！</p>
             )}
             {!allowRepeats && names.length === 0 && (
-                <p className="mt-4 text-slate-400">請先在輸入頁面新增名單</p>
+              <p className="mt-4 text-slate-400">請先在輸入頁面新增名單</p>
             )}
           </div>
         </div>
@@ -109,7 +108,7 @@ const LotteryMode: React.FC<LotteryModeProps> = ({ names }) => {
               <span className="text-sm font-medium text-slate-700">允許重複中獎</span>
             </label>
           </div>
-          
+
           <div className="text-sm text-slate-500">
             候選池: <span className="font-bold text-indigo-600">{availableCandidates.length}</span> / {names.length}
           </div>
@@ -141,8 +140,8 @@ const LotteryMode: React.FC<LotteryModeProps> = ({ names }) => {
             </div>
           ) : (
             history.map((item, index) => (
-              <div 
-                key={`${item.id}-${index}`} 
+              <div
+                key={`${item.id}-${index}`}
                 className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100 animate-in fade-in slide-in-from-top-2 duration-300"
               >
                 <div className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">

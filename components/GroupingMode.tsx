@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, Shuffle, Layers, Download, Divide, Calculator } from 'lucide-react';
+import { Users, Shuffle, Layers, Download, Divide } from 'lucide-react';
 import { NameItem, GroupResult } from '../types';
 import { shuffleArray } from '../utils/helpers';
 
